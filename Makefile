@@ -22,25 +22,25 @@ endif
 
 # How to link with some needed libraries of PGPLOT
 X11LINK := $(shell pkg-config --libs x11)
-PNGLINK := $(shell pkg-config --libs libpng)
 
 FC = gfortran
 
 # Include and link information for PGPLOT v5.X (including shared libs!)
 # Typically you need to have your PGPLOT_DIR environment variable set
 PGPLOTINC = -I$(PGPLOT_DIR)
-PGPLOTLINK = -L$(PGPLOT_DIR) -lcpgplot -lpgplot $(X11LINK) $(PNGLINK)
+PGPLOTLINK = -L$(PGPLOT_DIR) -lcpgplot -lpgplot $(X11LINK)
 
+
+all: plotres plotres_ps
 
 #gfortran -o ~/.local/bin/plotres plotres.f -lcpgplot -lpgplot -lX11 -lm
 plotres: 
-	$(FC) -o ~/.local/bin/$@ plotres.f $(PGPLOTLINK) -lm -lX11
+        $(FC) -o ~/.local/bin/$@ plotres.f $(PGPLOTLINK) -lm -lX11
 
 
 #gfortran -o ~/.local/bin/plotres_ps plotres_ps.f -lcpgplot -lpgplot -lX11 -lm 
 plotres_ps: 
-	$(FC) -o ~/.local/bin/$@ plotres_ps.f $(PGPLOTLINK) -lm -lX11
+        $(FC) -o ~/.local/bin/$@ plotres_ps.f $(PGPLOTLINK) -lm -lX11
 
-all: plotres plotres_ps
 clean:
-	rm ~/.local/bin/plotres  ~/.local/bin/plotres_ps
+        rm ~/.local/bin/plotres  ~/.local/bin/plotres_ps
