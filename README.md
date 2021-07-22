@@ -5,6 +5,8 @@ Forked from vivekvenkris/plotres
 git clone https://github.com/NAOC-pulsar/plotres.git
 cd plotres
 make
+# then the plotres and plotres_ps will be created in the ~/.local/bin/
+# check the executable program
 ls ~/.local/bin/plotres
 ls ~/.local/bin/plotres_ps
 ```
