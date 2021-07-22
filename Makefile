@@ -39,4 +39,8 @@ plotres:
 
 #gfortran -o ~/.local/bin/plotres_ps plotres_ps.f -lcpgplot -lpgplot -lX11 -lm 
 plotres_ps: 
-	$(FC) -o ~/.local/bin/$@ plotres.f $(PGPLOTLINK) -lm -lX11
+	$(FC) -o ~/.local/bin/$@ plotres_ps.f $(PGPLOTLINK) -lm -lX11
+
+all: plotres plotres_ps
+clean:
+	rm ~/.local/bin/plotres  ~/.local/bin/plotres_ps
