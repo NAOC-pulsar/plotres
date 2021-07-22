@@ -34,13 +34,13 @@ PGPLOTLINK = -L$(PGPLOT_DIR) -lcpgplot -lpgplot $(X11LINK)
 all: plotres plotres_ps
 
 #gfortran -o ~/.local/bin/plotres plotres.f -lcpgplot -lpgplot -lX11 -lm
-plotres: 
-        $(FC) -o ~/.local/bin/$@ plotres.f $(PGPLOTLINK) -lm -lX11
+plotres:
+	$(FC) -o ~/.local/bin/$@ plotres.f $(PGPLOTLINK) -lm -lX11
 
 
 #gfortran -o ~/.local/bin/plotres_ps plotres_ps.f -lcpgplot -lpgplot -lX11 -lm 
 plotres_ps: 
-        $(FC) -o ~/.local/bin/$@ plotres_ps.f $(PGPLOTLINK) -lm -lX11
+	$(FC) -o ~/.local/bin/$@ plotres_ps.f $(PGPLOTLINK) -lm -lX11
 
 clean:
-        rm ~/.local/bin/plotres  ~/.local/bin/plotres_ps
+	rm ~/.local/bin/plotres  ~/.local/bin/plotres_ps
