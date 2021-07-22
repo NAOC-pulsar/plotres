@@ -1,3 +1,12 @@
+# readme
+Forked from vivekvenkris/plotres
+git clone
+cd plotres
+make
+ls ~/.local/bin/plotres
+ls ~/.local/bin/plotres_ps
+
+
 # plotres
 plotres is an interactive GUI for analysing TEMPO residuals. 
 
