@@ -1,11 +1,13 @@
 # readme
 Forked from vivekvenkris/plotres
-git clone
+
+```bash
+git clone https://github.com/NAOC-pulsar/plotres.git
 cd plotres
 make
 ls ~/.local/bin/plotres
 ls ~/.local/bin/plotres_ps
-
+```
 
 # plotres
 plotres is an interactive GUI for analysing TEMPO residuals. 
