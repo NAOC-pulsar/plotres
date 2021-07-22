@@ -11,6 +11,20 @@ ls ~/.local/bin/plotres
 ls ~/.local/bin/plotres_ps
 ```
 
+# 注意
+假如发现抛出报错如下:
+```
+ ==========  PLOT RESIDUALS  ==========
+
+ Nb. of TOAs:        473
+At line 416 of file plotres.f
+Fortran runtime error: Bad value during floating point read
+```
+请检查`tempo.lis`文件中开头为PSR的行是否是如下的格式。
+`PSR J0024-7205AA  Ephem.: DE421  Clock: UTC(NIST)     Ref. MJD:   51600.0000`
+
+目前的解决方案之一为在par文件中不需要加入POSEPOCH选项。
+
 # plotres
 plotres is an interactive GUI for analysing TEMPO residuals. 
 
